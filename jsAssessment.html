@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Assessment</title>
+	<script type="text/javascript">
+		function convertToF()
+		{
+			var cel = document.getElementById("celsius").value;
+			
+			if(cel=="")
+			{
+				document.getElementById("fahrenheit").value = "";
+			}
+			else
+			{
+				var far = (cel * 9 / 5) + 32;
+				document.getElementById("fahrenheit").value = far;
+			}
+		}
+
+		function convertToC()
+		{
+			var far = document.getElementById("fahrenheit").value;
+			
+			if(far=="")
+			{
+				document.getElementById("celsius").value = "";
+			}
+			else
+			{
+				var cel = (far - 32) * (5 / 9);
+				document.getElementById("celsius").value = cel;
+			}
+		}
+	</script>
+</head>
+<body>
+	<div style="text-align:center; margin-top:50px">
+		<div>
+			<h1 style="color:red">Welcome to the Javascript temperature converter</h1>
+			<form>
+				<input style="height:30px;width:300px;margin:20px;font-size:16px" type="number" id="fahrenheit" onKeyUp="convertToC();" placeholder="Fahrenheit">
+				<img src="./convert.png" width="30" height="30">
+				<input style="height:30px;width:300px;margin:20px;font-size:16px" type="number" id="celsius" onKeyUp="convertToF();" placeholder="Celsius">
+			</form>
+		</div>
+	</div>
+</body>
+</html>
